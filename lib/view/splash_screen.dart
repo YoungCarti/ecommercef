@@ -1,33 +1,24 @@
 import 'package:ecommerceapp/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-im
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
    SplashScreen({super.key});
 
   final AuthController authController = Get.find<AuthController>();
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
   Widget build(BuildContext context) {
-    // navigate based on auth state after 2.5 seconds
+    // navigate based on auth state after 2.5 seconds);
     Future.delayed(const Duration(milliseconds: 2500),(){
       if (authController.isFirstTime) {
 
       } else if (authController.isLoggedIn) {
 
       } else {
-
+        
       }
     });
-
-
-
 
     return Scaffold(
       body: Container(
