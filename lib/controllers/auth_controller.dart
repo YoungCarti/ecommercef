@@ -4,15 +4,15 @@ import 'package:get/get.dart';
 class AuthController extends GetxController {
   final _storage = GetStorage();
 
-  final RxBool _isFirstTime = false.obs;
+  final RxBool _isFirstTime = true.obs;
   final RxBool _isLoggedIn = false.obs;
 
   bool get isFirstTime => _isFirstTime.value;
   bool get isLoggedIn => _isLoggedIn.value;
 
   @override
-  void onClose() {
-    super.onClose();
+  void onInit() {
+    super.onInit();
     _loadInitialState();
   }
 

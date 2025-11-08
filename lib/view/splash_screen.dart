@@ -1,4 +1,7 @@
 import 'package:ecommerceapp/controllers/auth_controller.dart';
+import 'package:ecommerceapp/view/main_screen.dart';
+import 'package:ecommerceapp/view/signin_screen.dart';
+import 'package:ecommerceapp/view/widgets/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,11 +15,11 @@ class SplashScreen extends StatelessWidget {
     // navigate based on auth state after 2.5 seconds);
     Future.delayed(const Duration(milliseconds: 2500),(){
       if (authController.isFirstTime) {
-
+        Get.off(()=> const OnboardingScreen());
       } else if (authController.isLoggedIn) {
-
+        Get.off(()=> const MainScreen());
       } else {
-        
+        Get.off(()=> const SigninScreen());
       }
     });
 
